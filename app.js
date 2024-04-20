@@ -5,6 +5,8 @@ const fs = require("fs");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const path = require("path");
+
 // Middleware to enable CORS
 app.use(
   cors({
@@ -24,6 +26,21 @@ app.get("/model.json", (req, res) => {
     }
     res.json(JSON.parse(data));
   });
+});
+
+app.get("/group1-shard1of3", (req, res) => {
+  const filePath = path.join(__dirname, "group1-shard1of3.bin");
+  res.sendFile(filePath);
+});
+
+app.get("/group1-shard2of3", (req, res) => {
+  const filePath = path.join(__dirname, "group1-shard2of3.bin");
+  res.sendFile(filePath);
+});
+
+app.get("/group1-shard3of3", (req, res) => {
+  const filePath = path.join(__dirname, "group1-shard3of3.bin");
+  res.sendFile(filePath);
 });
 
 // Error handling middleware for CORS errors
