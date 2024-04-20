@@ -28,17 +28,17 @@ app.get("/model.json", (req, res) => {
   });
 });
 
-app.get("/group1-shard1of3", (req, res) => {
+app.get("/group1-shard1of3.bin", (req, res) => {
   const filePath = path.join(__dirname, "group1-shard1of3.bin");
   res.sendFile(filePath);
 });
 
-app.get("/group1-shard2of3", (req, res) => {
+app.get("/group1-shard2of3.bin", (req, res) => {
   const filePath = path.join(__dirname, "group1-shard2of3.bin");
   res.sendFile(filePath);
 });
 
-app.get("/group1-shard3of3", (req, res) => {
+app.get("/group1-shard3of3.bin", (req, res) => {
   const filePath = path.join(__dirname, "group1-shard3of3.bin");
   res.sendFile(filePath);
 });
